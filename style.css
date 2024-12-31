@@ -1,0 +1,192 @@
+:root {
+    --primary-color: #abb2bf;
+    --secondary-color: #61afef;
+    --background-color: #282c34;
+    --card-color: #323741;
+    --hover-card-color: #4b5263;
+    --input-background: #3e4451;
+    --input-border: #565c6a;
+    --table-header-background: #4d5662;
+    --table-border: #565c6a;
+    --table-even-row: #454b58;
+    --scrollbar-thumb: #565c6a;
+    --scrollbar-track: #2d333d;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: var(--background-color);
+    color: var(--primary-color);
+    transition: background-color 0.3s ease;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.student-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 25px;
+    padding: 20px;
+}
+
+.student-card {
+    background-color: var(--card-color);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+    border: 2px solid transparent;
+}
+
+.student-card:hover {
+    transform: translateY(-5px);
+    background-color: var(--hover-card-color);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    border: 2px solid var(--secondary-color);
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+    overflow-y: auto;
+}
+
+.modal-content {
+    position: relative;
+    background-color: var(--card-color);
+    margin: 50px auto;
+    padding: 20px;
+    width: 80%;
+    max-width: 700px;
+    border-radius: 10px;
+    max-height: 80vh;
+    overflow-y: auto;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+    border: 2px solid var(--secondary-color);
+}
+
+.close-btn {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    font-size: 24px;
+    cursor: pointer;
+    color: var(--primary-color);
+    transition: color 0.2s ease;
+}
+
+.close-btn:hover {
+    color: var(--secondary-color);
+}
+
+.search-container {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+#searchInput {
+    padding: 12px;
+    width: 350px;
+    border: 1px solid var(--input-border);
+    border-radius: 6px;
+    font-size: 16px;
+    background-color: var(--input-background);
+    color: var(--primary-color);
+    transition: border-color 0.2s ease;
+}
+
+#searchInput:focus {
+    border-color: var(--secondary-color);
+    outline: none;
+}
+
+
+.student-info {
+    margin-bottom: 12px;
+}
+
+.student-info span {
+    font-weight: bold;
+    color: var(--secondary-color);
+    font-size: 1.05em;
+}
+
+.student-id {
+    color: var(--secondary-color);
+    font-size: 0.9em;
+    margin-bottom: 10px;
+    font-family: monospace;
+    text-align: right;
+}
+
+.section-title {
+    color: var(--primary-color);
+    margin-top: 20px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--secondary-color);
+    font-size: 1.4em;
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    margin-bottom: 20px;
+}
+
+.data-table th, .data-table td {
+    padding: 10px;
+    border: 1px solid var(--table-border);
+    text-align: left;
+    transition: background-color 0.2s ease;
+}
+
+.data-table th {
+    background-color: var(--table-header-background);
+    color: white;
+    font-weight: 600;
+}
+
+.data-table tr:nth-child(even) {
+    background-color: var(--table-even-row);
+}
+
+.data-table tr:hover {
+  background-color: rgba(var(--secondary-color), 0.15);
+}
+
+.nested-table {
+    margin: 5px 0;
+    width: 100%;
+}
+
+
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--scrollbar-track);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--scrollbar-thumb);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #777f8e;
+}
